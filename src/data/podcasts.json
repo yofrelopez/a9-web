@@ -1,0 +1,32 @@
+[
+  {
+    "id": "voz-consumidor",
+    "title": "La voz del consumidor",
+    "image": "/programs/voz-consumidor.jpg",
+    "url": "/podcasts/voz-consumidor"
+  },
+  {
+    "id": "sumaq-takiy",
+    "title": "Sumaq Takiy",
+    "image": "/programs/sumaq-takiy.jpg",
+    "url": "/podcasts/sumaq-takiy"
+  },
+  {
+    "id": "entrevista",
+    "title": "La Entrevista",
+    "image": "/programs/entrevista.jpg",
+    "url": "/podcasts/entrevista"
+  },
+  {
+    "id": "sin-barreras",
+    "title": "Sin Barreras",
+    "image": "/programs/sin-barreras.jpg",
+    "url": "/podcasts/sin-barreras"
+  },
+  {
+    "id": "Vinilos",
+    "title": "Vinilos",
+    "image": "/programs/vinilos.jpg",
+    "url": "/podcasts/vinilos"
+  }
+]
