@@ -60,7 +60,7 @@ export default function HeroSlider() {
             } as React.CSSProperties
         }
 
-          className={`h-[52vh] md:h-[64vh] xl:h-[76vh] max-h-[600px]
+          className={`h-[80vh] md:h-[85vh] xl:h-[90vh] max-h-[700px]
               [--swiper-navigation-color:var(--accent)]
               dark:[--swiper-navigation-color:var(--accent-b)]`}
         >

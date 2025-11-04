@@ -1,0 +1,587 @@
+{
+  "radio": {
+    "lunes": [
+      {
+        "id": 1,
+        "hora": "06:00",
+        "horaFin": "08:00",
+        "programa": "MÚSICA Y MENSAJES DE ALIENTO",
+        "conductor": "Automático",
+        "tipo": "musical",
+        "descripcion": "Música inspiradora y mensajes positivos para empezar el día con buena energía.",
+        "enVivo": false
+      },
+      {
+        "id": 2,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "LÍNEA ABIERTA MUJER EN ACCIÓN",
+        "conductor": "DIANA CABELLO ROJAS",
+        "tipo": "magazin",
+        "descripcion": "Programa dedicado a la mujer emprendedora y sus proyectos de vida.",
+        "enVivo": true
+      },
+      {
+        "id": 3,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "LA HORA DEL LÁTIGO",
+        "conductor": "MICHAEL JARA CHOQUE",
+        "tipo": "deportivo",
+        "descripcion": "Análisis deportivo y comentarios sobre el fútbol nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 4,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "EL IMPARCIAL NOTICIAS",
+        "conductor": "JESÚS MAURO CUBA LA ROSA",
+        "tipo": "informativo",
+        "descripcion": "Información objetiva e imparcial del acontecer nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 5,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "ENTRE LA ESPADA Y LA PARED",
+        "conductor": "RAFAEL ALARCÓN DÁVILA",
+        "tipo": "informativo",
+        "descripcion": "Análisis político y debate de los temas más controversiales de la actualidad.",
+        "enVivo": true
+      },
+      {
+        "id": 6,
+        "hora": "13:00",
+        "horaFin": "15:00",
+        "programa": "TARDES TROPICALES",
+        "conductor": "DJ FELIX",
+        "tipo": "musical",
+        "descripcion": "Música tropical, cumbia y salsa para alegrar tu tarde.",
+        "enVivo": true
+      },
+      {
+        "id": 7,
+        "hora": "15:00",
+        "horaFin": "18:00",
+        "programa": "AL CAER LA TARDE",
+        "conductor": "SALSAS DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Los clásicos de la salsa que marcaron época y siguen emocionando.",
+        "enVivo": false
+      },
+      {
+        "id": 8,
+        "hora": "18:00",
+        "horaFin": "20:00",
+        "programa": "REENCUENTRO CON EL AYER",
+        "conductor": "BALADAS EN ESPAÑOL",
+        "tipo": "musical",
+        "descripcion": "Baladas románticas en español que nos transportan a hermosos recuerdos.",
+        "enVivo": false
+      },
+      {
+        "id": 9,
+        "hora": "20:00",
+        "horaFin": "23:00",
+        "programa": "COMPLACENCIAS MUSICALES",
+        "conductor": "MÚSICA DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Música variada del recuerdo, dedicatorias y complacencias del público.",
+        "enVivo": false
+      },
+      {
+        "id": 10,
+        "hora": "23:00",
+        "horaFin": "06:00",
+        "programa": "ROCKOLA DEL TIEMPO",
+        "conductor": "MÚSICA VARIADA",
+        "tipo": "musical",
+        "descripcion": "Música variada de todos los tiempos para acompañarte durante la madrugada.",
+        "enVivo": false
+      }
+    ],
+    "martes": [
+      {
+        "id": 11,
+        "hora": "06:00",
+        "horaFin": "08:00",
+        "programa": "MÚSICA Y MENSAJES DE ALIENTO",
+        "conductor": "Automático",
+        "tipo": "musical",
+        "descripcion": "Música inspiradora y mensajes positivos para empezar el día con buena energía.",
+        "enVivo": false
+      },
+      {
+        "id": 12,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "LÍNEA ABIERTA MUJER EN ACCIÓN",
+        "conductor": "DIANA CABELLO ROJAS",
+        "tipo": "magazin",
+        "descripcion": "Programa dedicado a la mujer emprendedora y sus proyectos de vida.",
+        "enVivo": true
+      },
+      {
+        "id": 13,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "LA HORA DEL LÁTIGO",
+        "conductor": "MICHAEL JARA CHOQUE",
+        "tipo": "deportivo",
+        "descripcion": "Análisis deportivo y comentarios sobre el fútbol nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 14,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "EL IMPARCIAL NOTICIAS",
+        "conductor": "JESÚS MAURO CUBA LA ROSA",
+        "tipo": "informativo",
+        "descripcion": "Información objetiva e imparcial del acontecer nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 15,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "ENTRE LA ESPADA Y LA PARED",
+        "conductor": "RAFAEL ALARCÓN DÁVILA",
+        "tipo": "informativo",
+        "descripcion": "Análisis político y debate de los temas más controversiales de la actualidad.",
+        "enVivo": true
+      },
+      {
+        "id": 16,
+        "hora": "13:00",
+        "horaFin": "15:00",
+        "programa": "TARDES TROPICALES",
+        "conductor": "DJ FELIX",
+        "tipo": "musical",
+        "descripcion": "Música tropical, cumbia y salsa para alegrar tu tarde.",
+        "enVivo": true
+      },
+      {
+        "id": 17,
+        "hora": "15:00",
+        "horaFin": "18:00",
+        "programa": "AL CAER LA TARDE",
+        "conductor": "SALSAS DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Los clásicos de la salsa que marcaron época y siguen emocionando.",
+        "enVivo": false
+      },
+      {
+        "id": 18,
+        "hora": "18:00",
+        "horaFin": "20:00",
+        "programa": "REENCUENTRO CON EL AYER",
+        "conductor": "BALADAS EN ESPAÑOL",
+        "tipo": "musical",
+        "descripcion": "Baladas románticas en español que nos transportan a hermosos recuerdos.",
+        "enVivo": false
+      },
+      {
+        "id": 19,
+        "hora": "20:00",
+        "horaFin": "23:00",
+        "programa": "COMPLACENCIAS MUSICALES",
+        "conductor": "MÚSICA DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Música variada del recuerdo, dedicatorias y complacencias del público.",
+        "enVivo": false
+      },
+      {
+        "id": 20,
+        "hora": "23:00",
+        "horaFin": "06:00",
+        "programa": "ROCKOLA DEL TIEMPO",
+        "conductor": "MÚSICA VARIADA",
+        "tipo": "musical",
+        "descripcion": "Música variada de todos los tiempos para acompañarte durante la madrugada.",
+        "enVivo": false
+      }
+    ],
+    "miercoles": [
+      {
+        "id": 21,
+        "hora": "06:00",
+        "horaFin": "08:00",
+        "programa": "MÚSICA Y MENSAJES DE ALIENTO",
+        "conductor": "Automático",
+        "tipo": "musical",
+        "descripcion": "Música inspiradora y mensajes positivos para empezar el día con buena energía.",
+        "enVivo": false
+      },
+      {
+        "id": 22,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "LÍNEA ABIERTA MUJER EN ACCIÓN",
+        "conductor": "DIANA CABELLO ROJAS",
+        "tipo": "magazin",
+        "descripcion": "Programa dedicado a la mujer emprendedora y sus proyectos de vida.",
+        "enVivo": true
+      },
+      {
+        "id": 23,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "LA HORA DEL LÁTIGO",
+        "conductor": "MICHAEL JARA CHOQUE",
+        "tipo": "deportivo",
+        "descripcion": "Análisis deportivo y comentarios sobre el fútbol nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 24,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "EL IMPARCIAL NOTICIAS",
+        "conductor": "JESÚS MAURO CUBA LA ROSA",
+        "tipo": "informativo",
+        "descripcion": "Información objetiva e imparcial del acontecer nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 25,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "ENTRE LA ESPADA Y LA PARED",
+        "conductor": "RAFAEL ALARCÓN DÁVILA",
+        "tipo": "informativo",
+        "descripcion": "Análisis político y debate de los temas más controversiales de la actualidad.",
+        "enVivo": true
+      },
+      {
+        "id": 26,
+        "hora": "13:00",
+        "horaFin": "15:00",
+        "programa": "TARDES TROPICALES",
+        "conductor": "DJ FELIX",
+        "tipo": "musical",
+        "descripcion": "Música tropical, cumbia y salsa para alegrar tu tarde.",
+        "enVivo": true
+      },
+      {
+        "id": 27,
+        "hora": "15:00",
+        "horaFin": "18:00",
+        "programa": "AL CAER LA TARDE",
+        "conductor": "SALSAS DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Los clásicos de la salsa que marcaron época y siguen emocionando.",
+        "enVivo": false
+      },
+      {
+        "id": 28,
+        "hora": "18:00",
+        "horaFin": "20:00",
+        "programa": "REENCUENTRO CON EL AYER",
+        "conductor": "BALADAS EN ESPAÑOL",
+        "tipo": "musical",
+        "descripcion": "Baladas románticas en español que nos transportan a hermosos recuerdos.",
+        "enVivo": false
+      },
+      {
+        "id": 29,
+        "hora": "20:00",
+        "horaFin": "23:00",
+        "programa": "COMPLACENCIAS MUSICALES",
+        "conductor": "MÚSICA DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Música variada del recuerdo, dedicatorias y complacencias del público.",
+        "enVivo": false
+      },
+      {
+        "id": 30,
+        "hora": "23:00",
+        "horaFin": "06:00",
+        "programa": "ROCKOLA DEL TIEMPO",
+        "conductor": "MÚSICA VARIADA",
+        "tipo": "musical",
+        "descripcion": "Música variada de todos los tiempos para acompañarte durante la madrugada.",
+        "enVivo": false
+      }
+    ],
+    "jueves": [
+      {
+        "id": 31,
+        "hora": "06:00",
+        "horaFin": "08:00",
+        "programa": "MÚSICA Y MENSAJES DE ALIENTO",
+        "conductor": "Automático",
+        "tipo": "musical",
+        "descripcion": "Música inspiradora y mensajes positivos para empezar el día con buena energía.",
+        "enVivo": false
+      },
+      {
+        "id": 32,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "LÍNEA ABIERTA MUJER EN ACCIÓN",
+        "conductor": "DIANA CABELLO ROJAS",
+        "tipo": "magazin",
+        "descripcion": "Programa dedicado a la mujer emprendedora y sus proyectos de vida.",
+        "enVivo": true
+      },
+      {
+        "id": 33,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "LA HORA DEL LÁTIGO",
+        "conductor": "MICHAEL JARA CHOQUE",
+        "tipo": "deportivo",
+        "descripcion": "Análisis deportivo y comentarios sobre el fútbol nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 34,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "EL IMPARCIAL NOTICIAS",
+        "conductor": "JESÚS MAURO CUBA LA ROSA",
+        "tipo": "informativo",
+        "descripcion": "Información objetiva e imparcial del acontecer nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 35,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "ENTRE LA ESPADA Y LA PARED",
+        "conductor": "RAFAEL ALARCÓN DÁVILA",
+        "tipo": "informativo",
+        "descripcion": "Análisis político y debate de los temas más controversiales de la actualidad.",
+        "enVivo": true
+      },
+      {
+        "id": 36,
+        "hora": "13:00",
+        "horaFin": "15:00",
+        "programa": "TARDES TROPICALES",
+        "conductor": "DJ FELIX",
+        "tipo": "musical",
+        "descripcion": "Música tropical, cumbia y salsa para alegrar tu tarde.",
+        "enVivo": true
+      },
+      {
+        "id": 37,
+        "hora": "15:00",
+        "horaFin": "18:00",
+        "programa": "AL CAER LA TARDE",
+        "conductor": "SALSAS DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Los clásicos de la salsa que marcaron época y siguen emocionando.",
+        "enVivo": false
+      },
+      {
+        "id": 38,
+        "hora": "18:00",
+        "horaFin": "20:00",
+        "programa": "REENCUENTRO CON EL AYER",
+        "conductor": "BALADAS EN ESPAÑOL",
+        "tipo": "musical",
+        "descripcion": "Baladas románticas en español que nos transportan a hermosos recuerdos.",
+        "enVivo": false
+      },
+      {
+        "id": 39,
+        "hora": "20:00",
+        "horaFin": "23:00",
+        "programa": "COMPLACENCIAS MUSICALES",
+        "conductor": "MÚSICA DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Música variada del recuerdo, dedicatorias y complacencias del público.",
+        "enVivo": false
+      },
+      {
+        "id": 40,
+        "hora": "23:00",
+        "horaFin": "06:00",
+        "programa": "ROCKOLA DEL TIEMPO",
+        "conductor": "MÚSICA VARIADA",
+        "tipo": "musical",
+        "descripcion": "Música variada de todos los tiempos para acompañarte durante la madrugada.",
+        "enVivo": false
+      }
+    ],
+    "viernes": [
+      {
+        "id": 41,
+        "hora": "06:00",
+        "horaFin": "08:00",
+        "programa": "MÚSICA Y MENSAJES DE ALIENTO",
+        "conductor": "Automático",
+        "tipo": "musical",
+        "descripcion": "Música inspiradora y mensajes positivos para empezar el día con buena energía.",
+        "enVivo": false
+      },
+      {
+        "id": 42,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "LÍNEA ABIERTA MUJER EN ACCIÓN",
+        "conductor": "DIANA CABELLO ROJAS",
+        "tipo": "magazin",
+        "descripcion": "Programa dedicado a la mujer emprendedora y sus proyectos de vida.",
+        "enVivo": true
+      },
+      {
+        "id": 43,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "LA HORA DEL LÁTIGO",
+        "conductor": "MICHAEL JARA CHOQUE",
+        "tipo": "deportivo",
+        "descripcion": "Análisis deportivo y comentarios sobre el fútbol nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 44,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "EL IMPARCIAL NOTICIAS",
+        "conductor": "JESÚS MAURO CUBA LA ROSA",
+        "tipo": "informativo",
+        "descripcion": "Información objetiva e imparcial del acontecer nacional e internacional.",
+        "enVivo": true
+      },
+      {
+        "id": 45,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "ENTRE LA ESPADA Y LA PARED",
+        "conductor": "RAFAEL ALARCÓN DÁVILA",
+        "tipo": "informativo",
+        "descripcion": "Análisis político y debate de los temas más controversiales de la actualidad.",
+        "enVivo": true
+      },
+      {
+        "id": 46,
+        "hora": "13:00",
+        "horaFin": "15:00",
+        "programa": "TARDES TROPICALES",
+        "conductor": "DJ FELIX",
+        "tipo": "musical",
+        "descripcion": "Música tropical, cumbia y salsa para alegrar tu tarde.",
+        "enVivo": true
+      },
+      {
+        "id": 47,
+        "hora": "15:00",
+        "horaFin": "18:00",
+        "programa": "AL CAER LA TARDE",
+        "conductor": "SALSAS DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Los clásicos de la salsa que marcaron época y siguen emocionando.",
+        "enVivo": false
+      },
+      {
+        "id": 48,
+        "hora": "18:00",
+        "horaFin": "20:00",
+        "programa": "REENCUENTRO CON EL AYER",
+        "conductor": "BALADAS EN ESPAÑOL",
+        "tipo": "musical",
+        "descripcion": "Baladas románticas en español que nos transportan a hermosos recuerdos.",
+        "enVivo": false
+      },
+      {
+        "id": 49,
+        "hora": "20:00",
+        "horaFin": "23:00",
+        "programa": "COMPLACENCIAS MUSICALES",
+        "conductor": "MÚSICA DEL RECUERDO",
+        "tipo": "musical",
+        "descripcion": "Música variada del recuerdo, dedicatorias y complacencias del público.",
+        "enVivo": false
+      },
+      {
+        "id": 50,
+        "hora": "23:00",
+        "horaFin": "06:00",
+        "programa": "ROCKOLA DEL TIEMPO",
+        "conductor": "MÚSICA VARIADA",
+        "tipo": "musical",
+        "descripcion": "Música variada de todos los tiempos para acompañarte durante la madrugada.",
+        "enVivo": false
+      }
+    ],
+    "sabado": [
+      {
+        "id": 51,
+        "hora": "08:00",
+        "horaFin": "09:00",
+        "programa": "INNOVA NOTICIAS",
+        "conductor": "ALEXANDRA MUÑOZ",
+        "tipo": "informativo",
+        "descripcion": "Noticias innovadoras y actuales para mantenerte informado los fines de semana.",
+        "enVivo": true
+      },
+      {
+        "id": 52,
+        "hora": "09:00",
+        "horaFin": "10:00",
+        "programa": "CANTA CLARO",
+        "conductor": "JAIME HENRÍQUEZ ECHEVARRÍA",
+        "tipo": "magazin",
+        "descripcion": "Programa de variedades con música, entrevistas y entretenimiento.",
+        "enVivo": true
+      },
+      {
+        "id": 53,
+        "hora": "10:00",
+        "horaFin": "11:00",
+        "programa": "OPINIÓN PÚBLICA",
+        "conductor": "JONY PASCUAL BOZA",
+        "tipo": "informativo",
+        "descripcion": "Análisis y debate sobre temas de actualidad e interés público.",
+        "enVivo": true
+      },
+      {
+        "id": 54,
+        "hora": "11:00",
+        "horaFin": "13:00",
+        "programa": "CONTRA PODER",
+        "conductor": "YOFRE LÓPEZ SIFUENTES",
+        "tipo": "informativo",
+        "descripcion": "Programa de investigación periodística y denuncia social.",
+        "enVivo": true
+      },
+      {
+        "id": 55,
+        "hora": "13:00",
+        "horaFin": "23:59",
+        "programa": "SÁBADOS DE PACHANGAS",
+        "conductor": "Música Variada",
+        "tipo": "musical",
+        "descripcion": "Música de fiesta, cumbia, salsa y merengue para disfrutar el fin de semana.",
+        "enVivo": false
+      }
+    ],
+    "domingo": [
+      {
+        "id": 56,
+        "hora": "08:00",
+        "horaFin": "23:00",
+        "programa": "FULL MÚSICA REMIX",
+        "conductor": "DJ REY",
+        "tipo": "musical",
+        "descripcion": "Música remixada y mezclada para disfrutar todo el domingo con los mejores beats.",
+        "enVivo": false
+      }
+    ]
+  },
+  "tv": {
+    "lunes": [],
+    "martes": [],
+    "miercoles": [],
+    "jueves": [],
+    "viernes": [],
+    "sabado": [],
+    "domingo": []
+  }
+}

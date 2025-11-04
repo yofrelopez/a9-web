@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Locutores destacados",
-    "subtitle": "Conéctate con la voz de Barranca",
-    "image": "/slides/locutores-hero.jpg",
-    "cta": { "label": "Escúchanos en vivo", "href": "/en-vivo" },
+    "title": "Programas Informativos",
+    "subtitle": "Entre la Espada y la Pared, con Rafael Alarcón",
+    "image": "/slides/locutores-hero.png",
+    "cta": { "label": "Ver programación", "href": "/programacion" },
     "position": "left" 
   },
   {
     "id": 2,
     "title": "Noticias y actualidad",
-    "subtitle": "Cobertura local en 95.9 FM y redes",
-    "image": "/slides/slide-2-placeholder.webp",
+    "subtitle": "Cobertura local en 95.9 FM y redes sociales",
+    "image": "/slides/slide-2-placeholder.png",
     "cta": { "label": "Ver programación", "href": "/programacion" },
     "position": "left"
   }
