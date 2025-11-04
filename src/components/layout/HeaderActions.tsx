@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Play, Radio } from "lucide-react";
 import ThemeToggle from "../shared/ThemeToggle";
 import MobileMenuButton from "./MobileMenuButton";

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import programmingData from "@/data/programming.json";
+import { useState, useEffect, useCallback } from 'react';
+import programmingData from '@/data/programming.json';
 
 type Program = {
   id: number;
@@ -36,7 +36,7 @@ export const useCurrentProgram = () => {
   };
 
   // Encontrar programa actual
-  const findCurrentProgram = () => {
+  const findCurrentProgram = useCallback(() => {
     try {
       const now = getLimaTime();
       const currentHour = now.getHours();
@@ -76,7 +76,7 @@ export const useCurrentProgram = () => {
       console.error('Error finding current program:', error);
       return null;
     }
-  };
+  }, []);
 
   useEffect(() => {
     // Actualizar inmediatamente

@@ -28,7 +28,7 @@ export default function Footer() {
             className="mb-2 hidden dark:block"
           />
           <p className="text-sm text-gray-300 dark:text-gray-600 leading-relaxed">
-            "            &quot;Señal que manda&quot;"
+            &quot;Señal que manda&quot;
           </p>
           <div className="flex items-center space-x-2 text-sm text-gray-300 dark:text-gray-600">
             <FaMapMarkerAlt size={16} className="text-gray-400 dark:text-gray-600" />

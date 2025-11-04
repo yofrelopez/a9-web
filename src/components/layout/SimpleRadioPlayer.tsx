@@ -22,7 +22,7 @@ export default function SimpleRadioPlayer() {
   const { currentProgram } = useCurrentProgram();
   
   // Hook para el estado global del radio player
-  const { isPlaying, togglePlayback, startPlayback, stopPlayback } = useRadioPlayer();
+  const { isPlaying, startPlayback, stopPlayback } = useRadioPlayer();
   
   // URL del stream de radio a través del proxy local (sin CORS)
   const RADIO_STREAM_URL = "/api/radio-stream";
@@ -74,7 +74,7 @@ export default function SimpleRadioPlayer() {
       console.warn('AudioMotion: Failed to initialize, using CSS fallback', err);
       setAudioMotionReady(false);
     }
-  }, []);
+  }, [isMuted, volume]);
 
 
 
@@ -215,7 +215,7 @@ export default function SimpleRadioPlayer() {
       audio.removeEventListener('waiting', handleWaiting);
       audio.removeEventListener('canplay', handleCanPlay);
     };
-  }, [volume, isMuted, initializeAudioMotion, startPlayback, stopPlayback]);
+  }, [volume, isMuted, initializeAudioMotion, startPlayback, stopPlayback, audioMotionReady]);
 
   // Escuchar cambios en el estado global para controlar el audio desde el navbar
   useEffect(() => {
