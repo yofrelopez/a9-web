@@ -112,15 +112,16 @@ export default function SimpleRadioPlayer() {
           console.log('Audio playback started successfully');
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error during playback:', err);
       
       // Manejar diferentes tipos de errores
-      if (err.name === 'NotAllowedError') {
+      const error = err as { name?: string };
+      if (error.name === 'NotAllowedError') {
         setError('Haz clic para permitir reproducción de audio');
-      } else if (err.name === 'NotSupportedError') {
+      } else if (error.name === 'NotSupportedError') {
         setError('Formato de audio no soportado');
-      } else if (err.name === 'AbortError') {
+      } else if (error.name === 'AbortError') {
         setError('Reproducción cancelada');
       } else {
         setError('Error al conectar. Verifica tu conexión.');
@@ -226,7 +227,7 @@ export default function SimpleRadioPlayer() {
       setError(null);
       setIsLoading(true);
       audio.load();
-      audio.play().catch((err: any) => {
+        audio.play().catch((err: unknown) => {
         console.error('Error al iniciar desde navegación:', err);
         setError('Error al reproducir desde navegación');
         stopPlayback();

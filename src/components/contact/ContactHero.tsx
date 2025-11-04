@@ -23,7 +23,7 @@ export default function ContactHero() {
           </h1>
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed">
             Estamos aquí para escucharte. Ponte en contacto con Radio Antena Nueve,
-            tu "Señal que manda" desde Barranca, Perú.
+            tu &quot;Señal que manda&quot; desde Barranca, Perú.
           </p>
         </div>
       </div>

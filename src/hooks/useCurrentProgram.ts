@@ -48,7 +48,8 @@ export const useCurrentProgram = () => {
       const limaDayIndex = limaDay === 0 ? 6 : limaDay - 1;
       const limaDayKey = dias[limaDayIndex].key;
 
-      const todayPrograms = (programmingData as any)?.radio?.[limaDayKey] as Program[] || [];
+      const radioData = (programmingData as { radio: Record<string, Program[]> })?.radio;
+      const todayPrograms = radioData?.[limaDayKey] || [];
 
       const current = todayPrograms.find((program: Program) => {
         if (!program.hora || !program.horaFin) return false;
@@ -56,7 +57,7 @@ export const useCurrentProgram = () => {
         const [startHour, startMinute] = program.hora.split(':').map(Number);
         const [endHour, endMinute] = program.horaFin.split(':').map(Number);
 
-        let startMinutes = startHour * 60 + startMinute;
+        const startMinutes = startHour * 60 + startMinute;
         let endMinutes = endHour * 60 + endMinute;
 
         // Manejar programas que cruzan medianoche (como 23:00 - 06:00)
@@ -89,7 +90,7 @@ export const useCurrentProgram = () => {
     }, 60000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [findCurrentProgram]);
 
   return { currentProgram, limaTime };
 };

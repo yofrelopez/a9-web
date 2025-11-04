@@ -99,15 +99,16 @@ export default function RadioPlayer() {
           }
         }
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Error during playbook:', err);
       
       // Manejar diferentes tipos de errores
-      if (err.name === 'NotAllowedError') {
+      const error = err as { name?: string };
+      if (error.name === 'NotAllowedError') {
         setError('Haz clic para permitir reproducción de audio');
-      } else if (err.name === 'NotSupportedError') {
+      } else if (error.name === 'NotSupportedError') {
         setError('Formato de audio no soportado');
-      } else if (err.name === 'AbortError') {
+      } else if (error.name === 'AbortError') {
         setError('Reproducción cancelada');
       } else {
         setError('Error al conectar. Verifica tu conexión.');

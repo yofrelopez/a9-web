@@ -1,5 +1,4 @@
 // components/nosotros/EquipoSection.tsx
-import Image from "next/image";
 import { FaMicrophone, FaClock, FaMusic } from "react-icons/fa";
 
 export default function EquipoSection() {
@@ -46,7 +45,7 @@ export default function EquipoSection() {
         </h2>
         <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Las voces que día a día te acompañan y hacen posible que Radio Antena Nueve 
-          sea tu "Señal que manda"
+          sea tu &quot;Señal que manda&quot;
         </p>
       </div>
 
