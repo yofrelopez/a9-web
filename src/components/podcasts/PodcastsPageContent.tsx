@@ -38,7 +38,7 @@ export default function PodcastsPageContent() {
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
               Contáctanos a través de WhatsApp o Facebook y forma parte de Radio Antena 9, 
-              tu "Señal que manda" desde Barranca.
+              tu &ldquo;Señal que manda&rdquo; desde Barranca.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
