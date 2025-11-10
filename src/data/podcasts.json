@@ -1,32 +1,90 @@
 [
   {
-    "id": "voz-consumidor",
-    "title": "La voz del consumidor",
-    "image": "/programs/voz-consumidor.jpg",
-    "url": "/podcasts/voz-consumidor"
+    "id": "la-hora-del-latigo",
+    "title": "La hora del látigo",
+    "conductor": "Michael Jara Choque",
+    "description": "Programa picante bajo la conducción del polémico Michael (Pito) Jara Choque, sobre temas sociales enfocado en el distrito de Pativilca, con entrevistas, denuncias y más.",
+    "horario": "Lunes a viernes de 9:00 a 10:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/michael.jara.choque",
+    "image": "/programs/pito.png",
+    "url": "/podcasts/la-hora-del-latigo"
   },
   {
-    "id": "sumaq-takiy",
-    "title": "Sumaq Takiy",
-    "image": "/programs/sumaq-takiy.jpg",
-    "url": "/podcasts/sumaq-takiy"
+    "id": "el-imparcial",
+    "title": "El Imparcial noticias",
+    "conductor": "Jesús Cuba La Rosa",
+    "description": "Programa de noticias y análisis de la actualidad local, regional y nacional, con el estilo inconfundible del periodista Jesús Cuba La Rosa, el único.",
+    "horario": "Lunes a viernes de 10:00 a 11:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/jesuscuba.rosa",
+    "image": "/programs/cuba_la_rosa.jpeg",
+    "url": "/podcasts/el-imparcial"
   },
   {
-    "id": "entrevista",
-    "title": "La Entrevista",
-    "image": "/programs/entrevista.jpg",
-    "url": "/podcasts/entrevista"
+    "id": "entre-la-espada-y-la-pared",
+    "title": "Entre la espada y la pared",
+    "conductor": "Rafael Alarcón",
+    "description": "Análisis político y social con el periodista Rafael Alarcón, abordando temas de la provincia de Barranca, y la región Lima, con objetividad y profundidad.",
+    "horario": "Lunes a viernes de 11:00 am a 1:00 pm",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/el.delperu",
+    "image": "/programs/rafael.jpeg",
+    "url": "/podcasts/entre-la-espada-y-la-pared"
   },
   {
-    "id": "sin-barreras",
-    "title": "Sin Barreras",
-    "image": "/programs/sin-barreras.jpg",
-    "url": "/podcasts/sin-barreras"
+    "id": "linea-abierta-mujer-en-accion",
+    "title": "Mujer en Acción",
+    "conductor": "Diana Cabello Rojas",
+    "description": "Programa dedicado a la mujer, sus derechos, logros y desafíos en la sociedad actual, conducido por la destacada periodista Diana Cabello Rojas.",
+    "horario": "Lunes a viernes de 8:00 am a 9:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/profile.php?id=100064870170935",
+    "image": "/programs/diana_cabello.jpg",
+    "url": "/podcasts/linea-abierta-mujer-en-accion"
   },
   {
-    "id": "Vinilos",
-    "title": "Vinilos",
-    "image": "/programs/vinilos.jpg",
-    "url": "/podcasts/vinilos"
+    "id": "innova-noticias",
+    "title": "Innova Noticias",
+    "conductor": "Alexandra Muñoz",
+    "description": "Noticias y análisis de la actualidad con un enfoque innovador, presentado por la periodista Alexandra Muñoz, cubriendo temas locales, nacionales e internacionales.",
+    "horario": "Sábados de 8:00 am a 9:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/innovanoticiaspe",
+    "image": "/programs/alexandra_munoz.png",
+    "url": "/podcasts/innova-noticias"
+  },
+  {
+    "id": "canta-claro",
+    "title": "Canta Claro",
+    "conductor": "Jaime Echevarría",
+    "description": "Programa de análisis político del acontecer internacional, conducido por Jaime Echevarría, ofreciendo una mirada a los eventos de la política mundial.",
+    "horario": "Sábados de 9:00 am a 10:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/profile.php?id=100057240409666",
+    "image": "/programs/jaime_echevarria.jpeg",
+    "url": "/podcasts/canta-claro"
+  },
+  {
+    "id": "opinion-publica",
+    "title": "Opinión Pública",
+    "conductor": "Jony Pascual Boza",
+    "description": "Debate, análisis y opinión sobre temas de actualidad nacional e internacional, presentado por el periodista Jony Pascual Boza, con entrevistas y debates.",
+    "horario": "Sábados de 10:00 am a 11:00 am",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/jhonny.pascualboza.7",
+    "image": "/programs/pascual.png",
+    "url": "/podcasts/opinion-publica"
+  },
+  {
+    "id": "contra-poder",
+    "title": "Contra Poder",
+    "conductor": "Yofre López",
+    "description": "Entrevistas, análisis político y social con el periodista Yofre López, abordando temas de actualidad con profundidad y objetividad, ofreciendo una perspectiva crítica.",
+    "horario": "Sábados de 11:00 am a 12:00 pm",
+    "whatsapp": "+51 5555 555 555",
+    "facebook": "https://www.facebook.com/contrapoder.live",
+    "image": "/programs/yofre_lopez.png",
+    "url": "/podcasts/contra-poder"
   }
 ]

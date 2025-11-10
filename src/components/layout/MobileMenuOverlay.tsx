@@ -3,44 +3,67 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 
-// Elementos de navegación compartidos
-const navigationItems = [
+// Elementos de navegación simples
+const simpleNavigationItems = [
   { href: "/", label: "Inicio" },
-  { href: "/programacion", label: "Programación" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
+] as const;
+
+// Sub-items para Programación
+const programmingSubItems = [
+  { href: "/programacion", label: "Horarios", description: "Ver la programación completa" },
+  { href: "/podcasts", label: "Podcasts", description: "Nuestros programas de audio" }
 ] as const;
 
 export default function MobileMenuOverlay() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isProgrammingExpanded, setIsProgrammingExpanded] = useState(false);
   const pathname = usePathname();
   
   const isActive = (path: string) => pathname === path;
+  const isProgrammingSection = pathname === "/programacion" || pathname === "/podcasts";
   
-  const closeMenu = () => setIsOpen(false);
+  const closeMenu = () => {
+    setIsOpen(false);
+    // Notificar al botón que el menú se cerró
+    window.dispatchEvent(new CustomEvent('closeMobileMenu'));
+  };
 
   // Marcar como montado
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
+  // Auto-expandir sección de Programación si estamos en una de sus páginas
+  useEffect(() => {
+    if (isProgrammingSection) {
+      setIsProgrammingExpanded(true);
+    }
+  }, [isProgrammingSection]);
+
   // Escuchar eventos para abrir/cerrar el menú
   useEffect(() => {
-    const handleToggleMenu = () => setIsOpen(prev => !prev);
-    const handleCloseMenu = () => setIsOpen(false);
+    const handleOpenMenu = () => {
+      setIsOpen(true);
+    };
+    const handleCloseMenu = () => {
+      setIsOpen(false);
+    };
 
     // Escuchar eventos personalizados
-    window.addEventListener('toggleMobileMenu', handleToggleMenu);
+    window.addEventListener('openMobileMenu', handleOpenMenu);
     window.addEventListener('closeMobileMenu', handleCloseMenu);
 
     // Cerrar al cambiar de ruta
     setIsOpen(false);
+    setIsProgrammingExpanded(false);
 
     return () => {
-      window.removeEventListener('toggleMobileMenu', handleToggleMenu);
+      window.removeEventListener('openMobileMenu', handleOpenMenu);
       window.removeEventListener('closeMobileMenu', handleCloseMenu);
     };
   }, [pathname]);
@@ -98,7 +121,83 @@ export default function MobileMenuOverlay() {
         {/* Enlaces de navegación */}
         <div className="flex-1 overflow-y-auto bg-white dark:bg-bg-dark">
           <div className="p-6 space-y-3">
-            {navigationItems.map(({ href, label }) => (
+            {/* Inicio */}
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${
+                isActive("/")
+                  ? 'bg-primary/8 text-primary font-semibold'
+                  : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+              }`}
+              aria-current={isActive("/") ? "page" : undefined}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-base">Inicio</span>
+                {isActive("/") && (
+                  <div className="w-2 h-2 bg-accent rounded-full" />
+                )}
+              </div>
+            </Link>
+
+            {/* Sección expandible de Programación */}
+            <div className="space-y-2">
+              <button
+                onClick={() => setIsProgrammingExpanded(!isProgrammingExpanded)}
+                className={`relative w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${
+                  isProgrammingSection
+                    ? 'bg-primary/8 text-primary font-semibold'
+                    : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                }`}
+                aria-expanded={isProgrammingExpanded}
+                aria-current={isProgrammingSection ? "page" : undefined}
+              >
+                <div className="flex items-center space-x-2">
+                  <span className="text-base">Programación</span>
+                  {isProgrammingSection && (
+                    <div className="w-2 h-2 bg-accent rounded-full" />
+                  )}
+                </div>
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isProgrammingExpanded ? 'rotate-180' : ''
+                  }`} 
+                />
+              </button>
+
+              {/* Sub-items expandibles */}
+              <div 
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isProgrammingExpanded 
+                    ? 'max-h-96 opacity-100' 
+                    : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="ml-4 space-y-2 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
+                  {programmingSubItems.map(({ href, label, description }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={closeMenu}
+                      className={`block px-3 py-2 rounded-lg transition-all duration-200 transform active:scale-[0.98] ${
+                        isActive(href)
+                          ? 'bg-primary/10 text-primary font-medium border border-primary/20'
+                          : 'text-body dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                      }`}
+                      aria-current={isActive(href) ? "page" : undefined}
+                    >
+                      <div className="text-sm font-medium">{label}</div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        {description}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Resto de elementos simples de navegación */}
+            {simpleNavigationItems.slice(1).map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}

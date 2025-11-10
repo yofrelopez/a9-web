@@ -2,7 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import podcasts from "@/data/podcasts.json";
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 export default function PodcastsSection() {
   return (
@@ -23,39 +30,67 @@ export default function PodcastsSection() {
                        bg-primary dark:bg-[var(--accent-b)] rounded-md shadow hover:opacity-90 
                        transition"
           >
-            Todos los podcast →
+            Todos →
           </Link>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        {/* Swiper Carousel */}
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={24}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+          }}
+          navigation={true}
+          grabCursor={true}
+          breakpoints={{
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 16,
+            },
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
+            1280: {
+              slidesPerView: 5,
+              spaceBetween: 24,
+            },
+          }}
+          className="podcasts-swiper"
+        >
           {podcasts.map((podcast) => (
-            <Link
-              key={podcast.id}
-              href={podcast.url}
-              className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow 
-                         hover:shadow-lg transition"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                    src={podcast.image}
-                    alt={podcast.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw,
-                            (max-width: 1024px) 50vw,
-                            20vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-
-              </div>
-              <div className="p-4">
-                <h3 className="text-base font-semibold text-gray-800 dark:text-white group-hover:text-primary">
-                  {podcast.title}
-                </h3>
-              </div>
-            </Link>
+            <SwiperSlide key={podcast.id}>
+              <Link
+                href={podcast.url}
+                className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow 
+                           hover:shadow-lg transition block h-full"
+              >
+                <div className="relative w-full h-48">
+                  <Image
+                      src={podcast.image}
+                      alt={podcast.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw,
+                              (max-width: 1024px) 50vw,
+                              20vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                </div>
+                <div className="p-4">
+                  <h3 className="text-base font-semibold text-gray-800 dark:text-white group-hover:text-primary">
+                    {podcast.title}
+                  </h3>
+                </div>
+              </Link>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );

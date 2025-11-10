@@ -210,6 +210,52 @@
   }
 }
 
+/* ====== ESTILOS PERSONALIZADOS SWIPER ====== */
+@layer components {
+  .podcasts-swiper {
+    @apply py-4;
+  }
+
+  /* Botones de navegación */
+  .podcasts-swiper .swiper-button-next,
+  .podcasts-swiper .swiper-button-prev {
+    @apply text-primary dark:text-[var(--accent-b)];
+    @apply w-10 h-10;
+    @apply after:text-base after:font-bold;
+    @apply opacity-80 hover:opacity-100;
+    @apply transition-opacity duration-200;
+  }
+
+  /* Ajustar posición de los botones */
+  .podcasts-swiper .swiper-button-next {
+    @apply -right-4;
+  }
+
+  .podcasts-swiper .swiper-button-prev {
+    @apply -left-4;
+  }
+
+  /* Paginación */
+  .podcasts-swiper .swiper-pagination {
+    @apply !bottom-0;
+  }
+
+  .podcasts-swiper .swiper-pagination-bullet {
+    @apply bg-gray-300 dark:bg-gray-600;
+    @apply opacity-50;
+  }
+
+  .podcasts-swiper .swiper-pagination-bullet-active {
+    @apply bg-primary dark:bg-[var(--accent-b)];
+    @apply opacity-100;
+  }
+
+  /* Estados disabled */
+  .podcasts-swiper .swiper-button-disabled {
+    @apply opacity-30;
+  }
+}
+
 
 
 

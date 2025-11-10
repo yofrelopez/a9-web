@@ -1,19 +1,29 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function MobileMenuButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Escuchar cuando se cierra el menú desde otro lugar
+  // Cerrar menú al cambiar de ruta
   useEffect(() => {
-    const handleMenuClose = () => setIsOpen(false);
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Escuchar eventos para sincronizar estado
+  useEffect(() => {
+    const handleMenuClose = () => {
+      setIsOpen(false);
+    };
+    
     window.addEventListener('closeMobileMenu', handleMenuClose);
     
     return () => {
@@ -27,7 +37,7 @@ export default function MobileMenuButton() {
     
     // Disparar evento personalizado para el overlay
     if (newState) {
-      window.dispatchEvent(new CustomEvent('toggleMobileMenu'));
+      window.dispatchEvent(new CustomEvent('openMobileMenu'));
     } else {
       window.dispatchEvent(new CustomEvent('closeMobileMenu'));
     }
@@ -39,7 +49,7 @@ export default function MobileMenuButton() {
     <button
       onClick={toggleMenu}
       className="md:hidden w-10 h-10 rounded-xl bg-gray-100/80 dark:bg-gray-800/80 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 flex items-center justify-center hover:scale-105"
-      aria-label="Abrir menú de navegación"
+      aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
       aria-expanded={isOpen}
     >
       <div className="relative w-6 h-6">
