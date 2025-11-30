@@ -8,6 +8,7 @@ import { X, ChevronDown } from "lucide-react";
 // Elementos de navegación simples
 const simpleNavigationItems = [
   { href: "/", label: "Inicio" },
+  { href: "/tv", label: "TV En Vivo" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
 ] as const;
@@ -23,10 +24,10 @@ export default function MobileMenuOverlay() {
   const [isMounted, setIsMounted] = useState(false);
   const [isProgrammingExpanded, setIsProgrammingExpanded] = useState(false);
   const pathname = usePathname();
-  
+
   const isActive = (path: string) => pathname === path;
   const isProgrammingSection = pathname === "/programacion" || pathname === "/podcasts";
-  
+
   const closeMenu = () => {
     setIsOpen(false);
     // Notificar al botón que el menú se cerró
@@ -98,9 +99,8 @@ export default function MobileMenuOverlay() {
 
       {/* Menu móvil */}
       <nav
-        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-bg-dark border-l border-gray-200 dark:border-gray-700 shadow-2xl z-[70] transform transition-all duration-300 ease-out md:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white dark:bg-bg-dark border-l border-gray-200 dark:border-gray-700 shadow-2xl z-[70] transform transition-all duration-300 ease-out md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
         role="navigation"
         aria-label="Navegación móvil"
       >
@@ -125,11 +125,10 @@ export default function MobileMenuOverlay() {
             <Link
               href="/"
               onClick={closeMenu}
-              className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${
-                isActive("/")
+              className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isActive("/")
                   ? 'bg-primary/8 text-primary font-semibold'
                   : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
-              }`}
+                }`}
               aria-current={isActive("/") ? "page" : undefined}
             >
               <div className="flex items-center justify-between">
@@ -144,11 +143,10 @@ export default function MobileMenuOverlay() {
             <div className="space-y-2">
               <button
                 onClick={() => setIsProgrammingExpanded(!isProgrammingExpanded)}
-                className={`relative w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${
-                  isProgrammingSection
+                className={`relative w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isProgrammingSection
                     ? 'bg-primary/8 text-primary font-semibold'
                     : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
-                }`}
+                  }`}
                 aria-expanded={isProgrammingExpanded}
                 aria-current={isProgrammingSection ? "page" : undefined}
               >
@@ -158,20 +156,18 @@ export default function MobileMenuOverlay() {
                     <div className="w-2 h-2 bg-accent rounded-full" />
                   )}
                 </div>
-                <ChevronDown 
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    isProgrammingExpanded ? 'rotate-180' : ''
-                  }`} 
+                <ChevronDown
+                  className={`w-4 h-4 transition-transform duration-200 ${isProgrammingExpanded ? 'rotate-180' : ''
+                    }`}
                 />
               </button>
 
               {/* Sub-items expandibles */}
-              <div 
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  isProgrammingExpanded 
-                    ? 'max-h-96 opacity-100' 
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${isProgrammingExpanded
+                    ? 'max-h-96 opacity-100'
                     : 'max-h-0 opacity-0'
-                }`}
+                  }`}
               >
                 <div className="ml-4 space-y-2 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
                   {programmingSubItems.map(({ href, label, description }) => (
@@ -179,11 +175,10 @@ export default function MobileMenuOverlay() {
                       key={href}
                       href={href}
                       onClick={closeMenu}
-                      className={`block px-3 py-2 rounded-lg transition-all duration-200 transform active:scale-[0.98] ${
-                        isActive(href)
+                      className={`block px-3 py-2 rounded-lg transition-all duration-200 transform active:scale-[0.98] ${isActive(href)
                           ? 'bg-primary/10 text-primary font-medium border border-primary/20'
                           : 'text-body dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
-                      }`}
+                        }`}
                       aria-current={isActive(href) ? "page" : undefined}
                     >
                       <div className="text-sm font-medium">{label}</div>
@@ -202,11 +197,10 @@ export default function MobileMenuOverlay() {
                 key={href}
                 href={href}
                 onClick={closeMenu}
-                className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${
-                  isActive(href)
+                className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isActive(href)
                     ? 'bg-primary/8 text-primary font-semibold'
                     : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
-                }`}
+                  }`}
                 aria-current={isActive(href) ? "page" : undefined}
               >
                 <div className="flex items-center justify-between">
