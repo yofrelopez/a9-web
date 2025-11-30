@@ -8,6 +8,7 @@ import { ChevronDown } from "lucide-react";
 // Elementos de navegación simples
 const simpleNavigationItems = [
   { href: "/", label: "Inicio" },
+  { href: "/tv", label: "TV En Vivo" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
 ] as const;
@@ -20,7 +21,7 @@ const programmingSubItems = [
 
 export default function MainNavbar() {
   const pathname = usePathname();
-  
+
   const isActive = (path: string) => pathname === path;
   const isProgrammingSection = pathname === "/programacion" || pathname === "/podcasts";
 
@@ -32,11 +33,10 @@ export default function MainNavbar() {
           <NavigationMenu.Link asChild active={isActive("/")}>
             <Link
               href="/"
-              className={`relative px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 group ${
-                isActive("/")
-                  ? "text-primary bg-primary/10 font-semibold shadow-sm"
-                  : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
-              }`}
+              className={`relative px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 group ${isActive("/")
+                ? "text-primary bg-primary/10 font-semibold shadow-sm"
+                : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
+                }`}
               aria-current={isActive("/") ? "page" : undefined}
             >
               <span className="relative z-10">Inicio</span>
@@ -47,18 +47,17 @@ export default function MainNavbar() {
 
         {/* Dropdown de Programación */}
         <NavigationMenu.Item>
-          <NavigationMenu.Trigger 
-            className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 ${
-              isProgrammingSection
-                ? "text-primary bg-primary/10 font-semibold shadow-sm"
-                : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
-            } data-[state=open]:text-primary data-[state=open]:bg-primary/5`}
+          <NavigationMenu.Trigger
+            className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 ${isProgrammingSection
+              ? "text-primary bg-primary/10 font-semibold shadow-sm"
+              : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
+              } data-[state=open]:text-primary data-[state=open]:bg-primary/5`}
             aria-current={isProgrammingSection ? "page" : undefined}
           >
             <span className="relative z-10">Programación</span>
-            <ChevronDown 
-              className="w-4 h-4 transition-transform duration-300 group-data-[state=open]:rotate-180" 
-              aria-hidden 
+            <ChevronDown
+              className="w-4 h-4 transition-transform duration-300 group-data-[state=open]:rotate-180"
+              aria-hidden
             />
             <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </NavigationMenu.Trigger>
@@ -69,11 +68,10 @@ export default function MainNavbar() {
                 <NavigationMenu.Link key={href} asChild active={isActive(href)}>
                   <Link
                     href={href}
-                    className={`block p-3 rounded-lg transition-all duration-200 group ${
-                      isActive(href)
-                        ? "bg-primary/10 text-primary"
-                        : "hover:bg-gray-50 dark:hover:bg-gray-800 text-body dark:text-white"
-                    }`}
+                    className={`block p-3 rounded-lg transition-all duration-200 group ${isActive(href)
+                      ? "bg-primary/10 text-primary"
+                      : "hover:bg-gray-50 dark:hover:bg-gray-800 text-body dark:text-white"
+                      }`}
                   >
                     <div className="font-medium text-sm mb-1">
                       {label}
@@ -94,11 +92,10 @@ export default function MainNavbar() {
             <NavigationMenu.Link asChild active={isActive(href)}>
               <Link
                 href={href}
-                className={`relative px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 group ${
-                  isActive(href)
-                    ? "text-primary bg-primary/10 font-semibold shadow-sm"
-                    : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
-                }`}
+                className={`relative px-4 py-2 rounded-xl font-medium text-sm lg:text-base transition-all duration-300 group ${isActive(href)
+                  ? "text-primary bg-primary/10 font-semibold shadow-sm"
+                  : "text-body dark:text-white hover:text-primary hover:bg-primary/5"
+                  }`}
                 aria-current={isActive(href) ? "page" : undefined}
               >
                 <span className="relative z-10">{label}</span>
