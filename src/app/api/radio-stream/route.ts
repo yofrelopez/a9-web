@@ -5,9 +5,9 @@ export async function GET(request: NextRequest) {
     // URL del stream de radio original
     const radioStreamUrl = 'https://panel.foxradios.com:8100/radioantena9';
 
-    
+
     console.log('🎵 Proxy: Solicitando stream desde servidor...');
-    
+
     // Hacer la petición al servidor de radio desde el backend (sin CORS)
     const response = await fetch(radioStreamUrl, {
       headers: {
@@ -19,19 +19,19 @@ export async function GET(request: NextRequest) {
     if (!response.ok) {
       console.error('🎵 Proxy: Error del servidor de radio:', response.status);
       return NextResponse.json(
-        { error: 'Radio server error' }, 
+        { error: 'Radio server error' },
         { status: response.status }
       );
     }
 
     console.log('🎵 Proxy: Stream obtenido exitosamente');
-    
+
     // Obtener el stream como ReadableStream
     const stream = response.body;
-    
+
     if (!stream) {
       return NextResponse.json(
-        { error: 'No stream available' }, 
+        { error: 'No stream available' },
         { status: 500 }
       );
     }
@@ -44,12 +44,12 @@ export async function GET(request: NextRequest) {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET, OPTIONS',
         'Access-Control-Allow-Headers': 'Content-Type, Range',
-        
+
         // Headers de audio streaming
         'Content-Type': response.headers.get('Content-Type') || 'audio/mpeg',
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
-        
+
         // Permitir ranges para streaming
         'Accept-Ranges': 'bytes',
       },
@@ -61,14 +61,14 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('🎵 Proxy: Error interno:', error);
     return NextResponse.json(
-      { error: 'Internal proxy error', details: error instanceof Error ? error.message : 'Unknown error' }, 
+      { error: 'Internal proxy error', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
 }
 
 // Manejar preflight CORS
-export async function OPTIONS(request: NextRequest) {
+export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
     headers: {

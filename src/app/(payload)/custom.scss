@@ -1,0 +1,9 @@
+// @import '@payloadcms/next/scss';
+// @import '@payloadcms/richtext-lexical/scss';
+
+// Custom admin styling
+:root {
+  --theme-elevation-950: #1a1a1a;
+  --theme-success-500: #22c55e; // Match primary green from site
+  --theme-success-600: #16a34a;
+}

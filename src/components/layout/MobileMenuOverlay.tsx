@@ -8,6 +8,7 @@ import { X, ChevronDown } from "lucide-react";
 // Elementos de navegación simples
 const simpleNavigationItems = [
   { href: "/", label: "Inicio" },
+  { href: "/noticias", label: "Noticias" },
   { href: "/tv", label: "TV En Vivo" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }
@@ -126,8 +127,8 @@ export default function MobileMenuOverlay() {
               href="/"
               onClick={closeMenu}
               className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isActive("/")
-                  ? 'bg-primary/8 text-primary font-semibold'
-                  : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                ? 'bg-primary/8 text-primary font-semibold'
+                : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
                 }`}
               aria-current={isActive("/") ? "page" : undefined}
             >
@@ -144,8 +145,8 @@ export default function MobileMenuOverlay() {
               <button
                 onClick={() => setIsProgrammingExpanded(!isProgrammingExpanded)}
                 className={`relative w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isProgrammingSection
-                    ? 'bg-primary/8 text-primary font-semibold'
-                    : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                  ? 'bg-primary/8 text-primary font-semibold'
+                  : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
                   }`}
                 aria-expanded={isProgrammingExpanded}
                 aria-current={isProgrammingSection ? "page" : undefined}
@@ -165,8 +166,8 @@ export default function MobileMenuOverlay() {
               {/* Sub-items expandibles */}
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${isProgrammingExpanded
-                    ? 'max-h-96 opacity-100'
-                    : 'max-h-0 opacity-0'
+                  ? 'max-h-96 opacity-100'
+                  : 'max-h-0 opacity-0'
                   }`}
               >
                 <div className="ml-4 space-y-2 border-l-2 border-gray-200 dark:border-gray-700 pl-4">
@@ -176,8 +177,8 @@ export default function MobileMenuOverlay() {
                       href={href}
                       onClick={closeMenu}
                       className={`block px-3 py-2 rounded-lg transition-all duration-200 transform active:scale-[0.98] ${isActive(href)
-                          ? 'bg-primary/10 text-primary font-medium border border-primary/20'
-                          : 'text-body dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                        ? 'bg-primary/10 text-primary font-medium border border-primary/20'
+                        : 'text-body dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
                         }`}
                       aria-current={isActive(href) ? "page" : undefined}
                     >
@@ -198,8 +199,8 @@ export default function MobileMenuOverlay() {
                 href={href}
                 onClick={closeMenu}
                 className={`relative block px-4 py-3 rounded-xl font-medium transition-all duration-300 transform active:scale-[0.98] ${isActive(href)
-                    ? 'bg-primary/8 text-primary font-semibold'
-                    : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
+                  ? 'bg-primary/8 text-primary font-semibold'
+                  : 'text-ink dark:text-white bg-white dark:bg-bg-dark hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary'
                   }`}
                 aria-current={isActive(href) ? "page" : undefined}
               >

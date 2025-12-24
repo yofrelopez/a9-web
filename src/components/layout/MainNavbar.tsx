@@ -8,6 +8,7 @@ import { ChevronDown } from "lucide-react";
 // Elementos de navegación simples
 const simpleNavigationItems = [
   { href: "/", label: "Inicio" },
+  { href: "/noticias", label: "Noticias" },
   { href: "/tv", label: "TV En Vivo" },
   { href: "/nosotros", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" }

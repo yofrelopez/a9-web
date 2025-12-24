@@ -4,7 +4,7 @@ import podcasts from '@/data/podcasts.json';
 import PodcastDetailView from '@/components/podcasts/PodcastDetailView';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 // Generar parámetros estáticos para todas las rutas de podcasts
@@ -15,9 +15,10 @@ export function generateStaticParams() {
 }
 
 // Generar metadata dinámica para SEO
-export function generateMetadata({ params }: Props): Metadata {
-  const podcast = podcasts.find((p) => p.id === params.slug);
-  
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const podcast = podcasts.find((p) => p.id === slug);
+
   if (!podcast) {
     return {
       title: 'Podcast no encontrado - Radio Antena Nueve',
@@ -46,8 +47,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function PodcastPage({ params }: Props) {
-  const podcast = podcasts.find((p) => p.id === params.slug);
+export default async function PodcastPage({ params }: Props) {
+  const { slug } = await params;
+  const podcast = podcasts.find((p) => p.id === slug);
 
   if (!podcast) {
     notFound();
