@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=\"--no-deprecation\" next dev --turbopack",
-    "build": "payload generate:importmap && cross-env NODE_OPTIONS=\"--no-deprecation\" next build",
+    "build": "payload generate:types && payload generate:importmap && cross-env NODE_OPTIONS=\"--no-deprecation\" next build",
     "start": "next start",
     "lint": "eslint",
     "payload": "payload",
