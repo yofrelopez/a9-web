@@ -9,8 +9,7 @@ import sharp from 'sharp'
 // Import custom components
 // Import custom components
 // Import custom components
-import { CustomLogo } from './components/payload/CustomLogo'
-import { CustomIcon } from './components/payload/CustomIcon'
+// Custom components referenced by string path in config
 
 // Import collections
 import { Users } from './collections/Users'
@@ -45,10 +44,14 @@ export default buildConfig({
     },
     components: {
       graphics: {
-        // @ts-expect-error Payload types are stricter than standard React components
-        Logo: CustomLogo,
-        // @ts-expect-error Payload types are stricter than standard React components
-        Icon: CustomIcon,
+        Logo: {
+          path: 'src/components/payload/CustomLogo.tsx#CustomLogo',
+          exportName: 'CustomLogo',
+        },
+        Icon: {
+          path: 'src/components/payload/CustomIcon.tsx#CustomIcon',
+          exportName: 'CustomIcon',
+        },
       },
     },
   },
