@@ -45,11 +45,11 @@ export default buildConfig({
     components: {
       graphics: {
         Logo: {
-          path: path.resolve(dirname, 'components/payload/CustomLogo.tsx').replaceAll('\\', '/'),
+          path: '@/components/payload/CustomLogo.tsx#CustomLogo',
           exportName: 'CustomLogo',
         },
         Icon: {
-          path: path.resolve(dirname, 'components/payload/CustomIcon.tsx').replaceAll('\\', '/'),
+          path: '@/components/payload/CustomIcon.tsx#CustomIcon',
           exportName: 'CustomIcon',
         },
       },
