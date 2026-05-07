@@ -2,6 +2,7 @@ import { getPayload, Where } from 'payload'
 import config from '@payload-config'
 import type { NewsItem, NewsListResponse } from '@/types/news'
 import type { Category } from '@/payload-types'
+import { unstable_cache } from 'next/cache'
 
 // Cliente Singleton para reusar la instancia
 const getPayloadClient = async () => {
@@ -10,102 +11,107 @@ const getPayloadClient = async () => {
 
 /**
  * Obtiene lista de noticias con filtros y paginación
- * Usa Local API para máxima velocidad (Server Components)
+ * Usa Local API para máxima velocidad (Server Components) y unstable_cache para evitar consultas a DB.
  */
-export async function getNews(params: {
-    limit?: number
-    page?: number
-    featured?: boolean
-    categorySlug?: string
-} = {}): Promise<NewsListResponse> {
-    const payload = await getPayloadClient()
-    const { limit = 10, page = 1, featured, categorySlug } = params
+export const getNews = unstable_cache(
+    async (params: {
+        limit?: number
+        page?: number
+        featured?: boolean
+        categorySlug?: string
+    } = {}): Promise<NewsListResponse> => {
+        const payload = await getPayloadClient()
+        const { limit = 10, page = 1, featured, categorySlug } = params
 
-    const where: Where = {
-        status: {
-            equals: 'published',
-        },
-    }
-
-    if (typeof featured === 'boolean') {
-        where.featured = {
-            equals: featured,
-        }
-    }
-
-    if (categorySlug) {
-        // Primero buscamos la categoría por slug para obtener su ID
-        const categories = await payload.find({
-            collection: 'categories',
-            where: {
-                slug: {
-                    equals: categorySlug,
-                },
+        const where: Where = {
+            status: {
+                equals: 'published',
             },
-        })
+        }
 
-        if (categories.docs.length > 0) {
-            where.categories = {
-                contains: categories.docs[0].id,
-            }
-        } else {
-            // Si la categoría no existe, retornamos lista vacía o manejamos error
-            return {
-                docs: [],
-                hasNextPage: false,
-                hasPrevPage: false,
-                limit,
-                pagingCounter: 0,
-                totalDocs: 0,
-                totalPages: 0,
+        if (typeof featured === 'boolean') {
+            where.featured = {
+                equals: featured,
             }
         }
-    }
 
-    const result = await payload.find({
-        collection: 'news',
-        limit,
-        page,
-        sort: '-publishedAt', // Más recientes primero
-        where,
-        depth: 2, // Populate relacion (imagen, autor, categorias)
-    }) as unknown as NewsListResponse
+        if (categorySlug) {
+            const categories = await payload.find({
+                collection: 'categories',
+                where: {
+                    slug: {
+                        equals: categorySlug,
+                    },
+                },
+            })
 
-    // Transformación ligera para facilitar uso en frontend
-    const docs = result.docs.map(transformNewsItem)
+            if (categories.docs.length > 0) {
+                where.categories = {
+                    contains: categories.docs[0].id,
+                }
+            } else {
+                return {
+                    docs: [],
+                    hasNextPage: false,
+                    hasPrevPage: false,
+                    limit,
+                    pagingCounter: 0,
+                    totalDocs: 0,
+                    totalPages: 0,
+                }
+            }
+        }
 
-    return {
-        ...result,
-        docs,
-    }
-}
+        const result = await payload.find({
+            collection: 'news',
+            limit,
+            page,
+            sort: '-publishedAt',
+            where,
+            depth: 2,
+        }) as unknown as NewsListResponse
+
+        const docs = result.docs.map(transformNewsItem)
+
+        return {
+            ...result,
+            docs,
+        }
+    },
+    ['news-list-cache'],
+    { tags: ['news'], revalidate: false }
+)
 
 /**
  * Obtiene una noticia individual por Slug
  */
-export async function getNewsBySlug(slug: string): Promise<NewsItem | null> {
-    const payload = await getPayloadClient()
+export const getNewsBySlug = unstable_cache(
+    async (slug: string): Promise<NewsItem | null> => {
+        const payload = await getPayloadClient()
 
-    const result = await payload.find({
-        collection: 'news',
-        where: {
-            slug: {
-                equals: slug,
+        const result = await payload.find({
+            collection: 'news',
+            where: {
+                slug: {
+                    equals: slug,
+                },
+                status: {
+                    equals: 'published',
+                },
             },
-            status: {
-                equals: 'published',
-            },
-        },
-        limit: 1,
-        depth: 2,
-    })
+            limit: 1,
+            depth: 2,
+        })
 
-    if (!result.docs || result.docs.length === 0) {
-        return null
-    }
+        if (!result.docs || result.docs.length === 0) {
+            return null
+        }
 
-    return transformNewsItem(result.docs[0] as unknown as NewsItem)
-}
+        return transformNewsItem(result.docs[0] as unknown as NewsItem)
+    },
+    ['news-slug-cache'],
+    { tags: ['news'], revalidate: false }
+)
 
 /**
  * Helper para normalizar datos (URLs de imágenes, nombres, etc)

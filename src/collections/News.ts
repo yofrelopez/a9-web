@@ -12,6 +12,7 @@ import {
   OrderedListFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import { revalidateTag } from 'next/cache'
 
 // Slugify function for URL-friendly strings
 const slugify = (text: string): string => {
@@ -277,6 +278,20 @@ export const News: CollectionConfig = {
           data.publishedAt = new Date()
         }
         return data
+      },
+    ],
+    afterChange: [
+      ({ doc, operation }) => {
+        if (operation === 'create' || operation === 'update') {
+          revalidateTag('news')
+        }
+        return doc
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        revalidateTag('news')
+        return doc
       },
     ],
   },

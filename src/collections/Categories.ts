@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateTag } from 'next/cache'
 
 // Slugify function for URL-friendly strings
 const slugify = (text: string): string => {
@@ -69,4 +70,20 @@ export const Categories: CollectionConfig = {
       defaultValue: 'blue',
     },
   ],
+  hooks: {
+    afterChange: [
+      ({ doc, operation }) => {
+        if (operation === 'create' || operation === 'update') {
+          revalidateTag('news')
+        }
+        return doc
+      },
+    ],
+    afterDelete: [
+      ({ doc }) => {
+        revalidateTag('news')
+        return doc
+      },
+    ],
+  },
 }
