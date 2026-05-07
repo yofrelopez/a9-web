@@ -11,7 +11,6 @@ interface Props {
   params: Promise<{ slug: string }>
 }
 
-export const revalidate = 60 // ISR
 
 export async function generateStaticParams() {
   const result: NewsListResponse = await getNews({ limit: 50 })

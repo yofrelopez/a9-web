@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: 'Últimas noticias y actualidad de Soritor y el Alto Mayo.',
 }
 
-export const revalidate = 60 // ISR: Revalidar cada minuto
 
 import { Pagination } from '@/components/ui/Pagination'
 
