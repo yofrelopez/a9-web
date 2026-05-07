@@ -22,8 +22,8 @@ export const cloudinaryAdapter = ({
       name: 'cloudinary',
 
       // Handle file upload to Cloudinary
-      handleUpload: async ({ data, file }) => {
-        return new Promise((resolve, reject) => {
+      handleUpload: async ({ data, file }): Promise<void> => {
+        return new Promise<void>((resolve, reject) => {
           const uploadStream = cloudinary.uploader.upload_stream(
             {
               folder: folderPath,
